@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Routes } from './components/routes';
+import { RoutesAuth } from './components/routesAuth';
+import { Login } from './components/screens/login';
 
 export default function App() {
+  const isUserAuthenticated = true;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    isUserAuthenticated ?
+      <RoutesAuth/>
+    :
+      <Routes/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
